@@ -1,0 +1,63 @@
+package hotel_eclipse;
+/**
+ * @author Heber, Edmundo, jorlandes, Roberto e Luan
+ */
+
+public class reserva {
+    protected String nomeCliente;
+    protected String cpf;
+    protected hotel r;
+    protected pousada r2;
+
+     //Criacao de 2 contrutores usando casting
+    //construtor para hotel
+    public reserva(String nomeCliente, String cpf, hotel r) {
+        this.nomeCliente = nomeCliente;
+        this.cpf = cpf;
+        this.r = r;     
+    }
+    
+    //construtor para pousada
+    public reserva(String nomeCliente, String cpf, pousada r2) {
+        this.nomeCliente = nomeCliente;
+        this.cpf = cpf;
+        this.r2 = r2;
+        
+        
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public hotel getR() {
+        return r;
+    }
+
+    public void setR(hotel r) {
+        this.r = r;
+    }
+
+    public pousada getR2() {
+        return r2;
+    }
+
+    public void setR2(pousada r2) {
+        this.r2 = r2;
+    }
+    
+    
+    
+}
