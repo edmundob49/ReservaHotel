@@ -1,0 +1,44 @@
+package hotel_eclipse;
+
+import javax.swing.JOptionPane;
+/**
+ * @author Heber, Edmundo, jorlandes, Roberto e Luan
+ */
+
+public class repositorioReserva {
+    
+    private reserva[] reservas;
+    private final int MAX = 100;
+    private int indicereserva;
+    
+    public repositorioReserva(){
+        indicereserva = 0;
+        reservas = new reserva[MAX];
+    }
+    
+    public void inserirReserva (reserva res){
+        reservas[indicereserva] = res;
+        indicereserva++;
+    }
+    
+    // **************
+    
+    public reserva procurarReserva(String doc){
+    
+    	reserva temp = null;
+        
+    	for(int i = 0; i<indicereserva; i++){
+            if(reservas[i].getNomeCliente().equals(doc)){
+                    temp = reservas[i];
+                    break;
+            }
+            if (temp == null) {
+               JOptionPane.showMessageDialog(null, "Reserva não encontrada !!!", 
+                        "Alerta", JOptionPane.WARNING_MESSAGE); 
+            }
+        
+    	}
+    	return temp;
+    }
+    
+}
