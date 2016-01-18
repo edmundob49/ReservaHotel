@@ -1,0 +1,29 @@
+package hotel_eclipse;
+/**
+ * @author Heber, Edmundo, jorlandes, Roberto e Luan
+ */
+
+public class hotel extends hotelAbstrata{
+    private static double diariaBase = 100;  
+        
+    public hotel(String nome, String cidade, String quarto){
+        super(nome, cidade);
+        setQuarto(quarto);
+        setDiaria(calculaDiaria());
+    }
+    
+    public double calculaDiaria(){
+	   
+	   if(quarto == "Suite Master"){
+		   diaria = diariaBase * 2;
+       }
+	   else if(quarto == "Suite"){
+           diaria = diariaBase * 1.5; 
+       }
+	   else{
+		   diaria = diariaBase;
+       } 
+	   return diaria;
+    } 
+    
+}
