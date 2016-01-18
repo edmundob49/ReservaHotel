@@ -1,0 +1,71 @@
+package hotel_eclipse;
+
+import javax.swing.JOptionPane;
+
+/**
+ * @author Heber, Edmundo, jorlandes, Roberto e Luan
+ */
+public class repositorioHotelPousada {
+    private hotel[] hoteis;
+    private pousada[] pousadas;
+    private final int MAX = 100;
+    private int indicehotel, indicepousada;
+    
+    public repositorioHotelPousada(){
+        indicehotel = 0;
+        indicepousada = 0;
+        hoteis = new hotel [MAX];
+        pousadas = new pousada [MAX];
+    }
+    
+    public void inserirHotel (hotel h){
+        hoteis[indicehotel] = h;
+        indicehotel++;
+    }
+    public void inserirPousada (pousada p){
+        pousadas[indicepousada] = p;
+        indicepousada++;
+    }
+    
+    // **************
+    
+    public hotel procurarHotel(String n){
+    
+    	hotel temp = null;
+        
+    	for(int i = 0; i<indicehotel; i++){
+            if(hoteis[i].getNome().equals(n)){
+                    temp = hoteis[i];
+                    break;
+            }
+            if (temp == null) {
+                 
+                JOptionPane.showMessageDialog(null, "Hotel não encontrado !!!", 
+                        "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+        
+    	}
+    	return temp;
+    }
+    
+    
+ // ************** 
+    public pousada procurarPousada(String n){
+        
+    	pousada temp = null;
+        
+    	for(int i = 0; i<indicepousada; i++){
+            if(pousadas[i].getNome().equals(n)){
+                    temp = pousadas[i];
+                    break;
+            }
+            if (temp == null) {
+                JOptionPane.showMessageDialog(null, "Reserva não encontrada !!!", 
+                        "Alerta", JOptionPane.WARNING_MESSAGE);    
+            }
+        
+    	}
+    	return temp;
+    }
+    
+}
